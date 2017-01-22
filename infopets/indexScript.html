@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Info about pets </title>
+    
+    <script>
+    function provideInfo() {
+var a = document.getElementById('hryvna');
+var b = document.getElementById('pole');
+var c = Number(a.value);
+var d = c * 28
+b.innerHTML = " <span style='color:red'>"+c+"</span> hryvnas is "+d;
+    }
+
+    </script>
+
+</head>
+<body bgcolor="#ffb6c1">
+
+<header ><h1 align="center"> Hi!!! Welcome. Here you can get all info about your pets))</h1> 
+<p align="center">  Please click the picture of the cat </p>
+</header>
+
+
+
+<article> calculate hrivnas to dollars <input id="hryvna" type="text" value="100"/>
+<input type="button" value="test" onclick="provideinfo()"/> <div id=pole"> dollars</div>
+  
+ </article>
+
+
+
+
+
+    <div align="center"><a href="cat.html"><img src="cat.jpg" align="middle" height="180" width="320" border="5"
+    bordercolor="#black" title="Click to see info about cats!!!"></div></a>
+    
+    <div align="center"><img src="dog.jpg" align="middle" height="180" width="320"></div>
+
+    <div align="center"><img src="hamster.jpg" align="middle" height="180" width="320"></div>
+
+<footer > <p align="center"> This site is about animals. Olena Us Copywright </p> </footer>
+</body>
+
+</html>

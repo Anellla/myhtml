@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <style>
+       div, td {
+            margin: 0px;
+            padding: 0px;
+       }
+	   
+       body {
+         text-align: center;
+         font-size: 200%;
+       }
+       body > div {
+         text-align: center;
+       }
+       table.fifteen-table {
+          margin: auto;
+          background-color: #8080ff;
+          border-radius: 10px;
+       }
+       table.fifteen-table,table.fifteen-table td {
+         border: 4px solid blue;
+         margin: auto;
+       }
+       table.fifteen-table td {
+         vertical-align: middle
+       }
+       table.fifteen-table td div {
+         width: 100px;
+         height: 100px;
+         background: linear-gradient(#FFFF00,#808000);
+         border: 2px solid #404000; 
+         font-size: 300%;
+         padding: 10px;
+         margin: 20px;
+         border-radius: 10px; 
+       }
+       table.fifteen-table td div.emptyBox {
+         background: transparent;
+         border: 0px;
+       } 
+     </style>
+  </head>
+  <body>
+    <div>
+     <h1 id="golovne">Fifteen game</h1>
+     <table class="fifteen-table">
+       <tr>
+         <td> <div>1</div> </td>
+         <td> <div>2</div></td>
+         <td> <div>3</div> </td>
+         <td> <div>4</div> </td>
+       </tr>
+       <tr>
+         <td> <div>5</div> </td>
+         <td> <div>6</div> </td>
+         <td> <div>7</div> </td>
+         <td> <div>8</div> </td>
+       </tr>
+       <tr>
+         <td> <div>9</div> </td>
+         <td> <div>10</div> </td>
+         <td> <div>11</div> </td>
+         <td> <div>12</div> </td>
+       </tr>
+       <tr>
+         <td> <div>13</div> </td>
+         <td> <div>14</div> </td>
+         <td> <div>15</div> </td>
+         <td> <div class="emptyBox">&nbsp;</div> </td>
+       </tr>
+   </table>
+   </div>
+  </body>
+</html>
+
+
+
