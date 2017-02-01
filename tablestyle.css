@@ -1,0 +1,61 @@
+    
+
+    
+	body { 
+		text-shadow: 1px 2px 3px #666;
+		background-image: url("wood6.jpg");
+	    text-align: center; 
+        
+    }
+	
+    table {
+		font-size: 70px;
+        margin:auto;	    	
+	    background:linear-gradient(lightskyblue,dodgerblue);
+        border-collapse: separate;
+		border-spacing: 5px 5px;	
+        border: 10px solid black;
+   		table-layout: fixed;
+    }
+    td { 
+	    vertical-align: middle;	    
+	    border-radius: 10px;
+        padding: 10px;
+    }
+
+    table.tableFifteen td {
+	    background:linear-gradient(#98FB98,#FFFFE0);
+		border:2px solid black;
+	}
+	
+    table.tableFifteen td div:hover {
+	    background:#F4A460;
+	}
+	
+    table.tableFifteen td div {
+		width:86px;
+		height: 86px;
+	    border:2px solid black;
+	    background:#4CAF50;
+		color: #FFFFFF;
+	}
+	
+	h4 {
+		//word-spacing: 20px;
+		//letter-spacing: 5px;
+		text-transform: uppercase;
+		margin: 20px;
+		text-shadow: 1px 2px 3px #666;
+	}
+	
+	.tile {
+	    //width:90px;
+		//height: 90px;
+	    border:2px solid black;
+	    background:linear-gradient(black,brown);
+		margin:auto;
+		
+	}
+	
+
+	    
