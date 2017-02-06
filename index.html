@@ -2,15 +2,16 @@
 
 <html>
 <head>
+<meta charset="utf-8">
     <title> The game of fifteen </title>
        <link rel="stylesheet" href="tablestyle.css"> 
 	<script src="fifteen.js">
 	
 	</script>
 </head>
-<body onload="init()">
+<body onload="init()" onkeydown = "moveKey()">
 
-    <div id="fift" style ="display:none">
+    <div id="fift"> <!-- style ="display:none" -->
 	<caption> <h4> The fifteen game </h4> </caption>
     <table class="tableFifteen">
         <tr >
@@ -39,14 +40,14 @@
 	</tr>
     </table>
     </div>
-    <div align = "left" > <form> <p class= "forms" >
-	<big> Ім`я:   </big> <input id = "name" placeholder="Ім`я"
-	type="text"></p><br/>
-	<p class= "forms"> <big> Пароль: </big>  <input id = "password"
-	 placeholder="Пароль" type = "password" > </p> <br/> 
-	<p class= "forms"> <input id = "button" type ="button" 
-    value = " Надіслати дані та показати гру" onclick = "showGame()" > 
-</p> </form> </div>
+    
+    <div id="names" align = "center" > 
+        <form> <p >  <input id = "name" name = "name" placeholder="Р†Рј'СЏ" type="text"></p> <br/>
+	           <p >  <input id = "password" name = "password" placeholder="РџР°СЂРѕР»СЊ" type = "password"> </p> <br/>
+	           <p >  <input id = "button" type ="button" value = " РќР°РґС–СЃР»Р°С‚Рё РґР°РЅС– С‚Р° РїРѕРєР°Р·Р°С‚Рё РіСЂСѓ" onclick = "showGame()" > </p> 
+        </form> 
+    </div>
+
 </body>
 
 </html>

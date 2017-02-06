@@ -8,6 +8,17 @@
         
     }
 	
+    #button {
+
+    	height: 40px;
+    	width: 300px;
+    }
+    
+    #fift {
+       display: "none";
+
+    }
+    
     table {
 		font-size: 70px;
         margin:auto;	    	
@@ -40,7 +51,8 @@
 		color: #FFFFFF;
 	}
 	
-	h4 {
+	h4 { 
+		font-size: 45px;
 		//word-spacing: 20px;
 		//letter-spacing: 5px;
 		text-transform: uppercase;
