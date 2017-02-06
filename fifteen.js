@@ -1,40 +1,22 @@
 var fifteenOrder = [1,2,3,4,5,6,7,8,9,10,12,15,13,14,11,0];
 //15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,
-//[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0];
+
 
 function init(){
 
 	var i, div, td;
 	for (i=0; i < fifteenOrder.length - 1; i++) {
 		div = document.createElement('div');
-	    //div.className = "tile";
-		//div.style.backgroundColor = 'yellow';
         div.innerHTML = fifteenOrder[i];
 	    td = document.getElementById('t'+ i);
 		td.appendChild(div);
 		
 
 	}	
-// var game = document.getElementById("fift")
 document.body.addEventListener("keydown", theKeyIsPressed);
 }
 
-// function checkKeycode(event) {
-// var keycode;
-// if(!event) var 
-// 	event = window.event;
-
-// if (event.keyCode) 
-//     keycode = event.keyCode; // IE
-
-// else if(event.which) 
-//     keycode = event.which; // all browsers
-
-// return keycode;
-
-// }
 var counter = 0;
-
 function moveKey (e) {
 	//console.log("key pressed" + (counter++), e);
 }
@@ -46,9 +28,22 @@ function theKeyIsPressed (e) {
         console.log("key pressed left");
         LEFT();
 	}
-
+    if (e.key =='ArrowRight')
+	{
+        console.log("key pressed right");
+        RIGHT();
+	}
+	if (e.key =='ArrowUp')
+	{
+        console.log("key pressed up");
+        UP();
+	}
+	if (e.key =='ArrowDown')
+	{
+        console.log("key pressed down");
+        DOWN();
+	}
 }
-
 
 function LEFT () {
     var zero = fifteenOrder.indexOf(0);
@@ -56,12 +51,82 @@ function LEFT () {
     var rowZero = Math.floor(zero / 4); 
     var columnZero = Math.floor(zero % 4);
     console.log ("Row is" + " " + rowZero , "Column is" + " " + columnZero);
-    if (columnZero != 0)
+    if (columnZero == 0)
     {
-    	moveCellsZero (zero, zero-1);
-    	console.log ("Swapping");
+    	console.log ("At the edge of left border");
     }
 
+    else	
+    {   
+    	var nearCell = zero - 1;
+    	moveCellsZero (zero, nearCell);
+    	fifteenOrder[zero] = fifteenOrder[nearCell];
+	    fifteenOrder[nearCell] = 0;
+    	console.log ("Swapping");
+    }
+}
+
+function RIGHT () {
+    var zero = fifteenOrder.indexOf(0);
+    var zeroPlace = ( "t" + zero);
+    var rowZero = Math.floor(zero / 4); 
+    var columnZero = Math.floor(zero % 4);
+    console.log ("Row is" + " " + rowZero , "Column is" + " " + columnZero);
+    if (columnZero == 3)
+    {
+    	console.log ("At the edge of right border");
+    }
+
+    else	
+    {     
+    	var nearCell = zero + 1;
+    	moveCellsZero (zero, nearCell);
+    	fifteenOrder[zero] = fifteenOrder[nearCell];
+	    fifteenOrder[nearCell] = 0;
+    	console.log ("Swapping");
+    }
+}
+
+function UP () {
+    var zero = fifteenOrder.indexOf(0);
+    var zeroPlace = ( "t" + zero);
+    var rowZero = Math.floor(zero / 4); 
+    var columnZero = Math.floor(zero % 4);
+    console.log ("Row is" + " " + rowZero , "Column is" + " " + columnZero);
+    if (rowZero == 0)
+    {
+    	console.log ("At the edge of upper border");
+    }
+
+    else	
+    {   
+    	var nearCell = zero - 4;
+    	moveCellsZero (zero, nearCell);
+    	fifteenOrder[zero] = fifteenOrder[nearCell];
+	    fifteenOrder[nearCell] = 0;
+    	console.log ("Swapping");
+    }
+}
+
+function DOWN () {
+    var zero = fifteenOrder.indexOf(0);
+    var zeroPlace = ( "t" + zero);
+    var rowZero = Math.floor(zero / 4); 
+    var columnZero = Math.floor(zero % 4);
+    console.log ("Row is" + " " + rowZero , "Column is" + " " + columnZero);
+    if (rowZero  == 3)
+    {
+    	console.log ("At the edge of bottom border");
+    }
+
+    else	
+    {   
+    	var nearCell = zero + 4;
+    	moveCellsZero (zero, nearCell);
+    	fifteenOrder[zero] = fifteenOrder[nearCell];
+	    fifteenOrder[nearCell] = 0;
+    	console.log ("Swapping");
+    }
 }
 
 function moveCellsZero (from,to) {
@@ -74,81 +139,6 @@ function moveCellsZero (from,to) {
 	
 }
 
-// function LEFT() {
-// 	var zero = fifteenOrder.indexOf(0);
-//     var zeroPlace = ( "t" + zero);
-//     var rowZero = zero / 4; 
-//     var columnZero = zero % 4;
-//     console.log("rowZero , columnZero ");
-// // }
-
-    // if ()
-    // var nearCell = 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.onkeydown = function checkKeycode(event)
-
-// {
-
-//     var keycode;
-
-//     if(!event) var event = window.event;
-
-//     if (event.keyCode) keycode = event.keyCode; // IE
-
-//     else if(event.which) keycode = event.which; // all browsers
-
-//     alert("keycode: "+keycode);
-// }
-
-// function findZero() {
-
-// 	// for (i=0; i<15; i++)
-// 	// {
-// 	// 	if ( fifteenOrder[i] == 0 )
-
-// 	var zero = fifteenOrder.indexOf(0);
-// 	var zeroPlace = ( "t" + zero);
-// 	//return zeroPlace;
-// 		//var zeroPlase = ("t" + i) ;	
-// 	console.log("zero returned" , zeroPlace );
-	
-	
-// 	}
-	
-
-
-// function getKeyCode
-// {
-
-
-
-// var LEFT = document.getElementById(findZero())
-// else if(event.which) keycode = event.which;
-// if 
-// if ()
-// if(!event) var event = window.event;
-// LEFT.addEventListener()
-// var DOWN
-// var RIGHT
-// var UP
-// window.addEventListener("keydown", function (event) {
-
-// }
 
 function showGame() {
   
@@ -157,7 +147,7 @@ function showGame() {
     var nam = document.getElementById("name");
     var pass = document.getElementById("password");
    
-        if (nam.value == "" && pass.value == "" )
+        if (nam.value == "Lena" && pass.value == "1" )
         	// if (nam.value == "Lena" && pass.value == "1" )
         {
             fift.style.display = "block";
@@ -167,41 +157,6 @@ function showGame() {
         {
             alert("wrong name and passsword!!!")
         }
-
-
-
-    // var blockGame = document.getElementById("fift");
-    // var blockForm = document.getElementById("names");
-    // var nam = document.getElementById("name").value;
-    // var pass = document.getElementById("password").value;
-   
-    //     if (nam == "Lena" && pass == "1" )
-    //     {
-    //         fift.style.display = "block";
-	   //      names.style.display = "none";
-    //     }
-    //     else
-    //     {
-    //         alert("wrong name and passsword!!!")
-    //     }
-
-
- 
-    //   var blockGame = document.getElementById("fift");
-    //   var blockForm = document.getElementById("names");
-    //   fift.style.display = "block";
-	//   names.style.display = "none";
-
-
-	//fift.style.display = "block";
-	//names.style.display = "none";
-	//}
-    // else
-    //  {
-    //  	alert(wrong!);
-    //  }
-	//if (nam.name = Lena && pass.password = Lena)
-	//{
 }
 
 function moveCells(from,to) {
@@ -248,36 +203,4 @@ function move (place) {
 	fifteenOrder[emptyCell] = fifteenOrder[place];
 	fifteenOrder[place] = 0;
 	win();
-
-	
-	//eight = document.getElementById('t' + place);
-	//zero = document.getElementById('t15');
-	//baby = eight.firstChild;
-	//eight.removeChild(baby);
-	//zero.appendChild(baby);
-}
-  
-// function LEFT  {
-
-// 	for (i=0; i<15; i++)
-// 	{
-// 		if (fifteenOrder[i] == 0 )
-// 		var zero = document.getElementById("t" + i);	
-
-// var checkLeft = document.getElementById("")
-
-// }
-
-// function RIGHT{
-
-
-// }
-
-// function UP{
-
-
-// }
-
-// function DOWN {
-
-// }
+  }
